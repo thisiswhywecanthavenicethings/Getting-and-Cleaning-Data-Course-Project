@@ -2,6 +2,8 @@
 ## By: Alyssa Weinstein
 ## Date: 2/2/17
 #########################################################################################################################################
+
+Analysis<-function(){
 library(reshape2)
 # Part 1:
 
@@ -75,5 +77,6 @@ all$ActivityID <- as.factor(all$ActivityID)
 melted <- melt(all, ids = c("SubjectID", "ActivityID"))
 # recast the data
 subjectAvg <- dcast(melted, SubjectID + ActivityID ~ variable, mean)
- 
+return(subjectAvg)
+}
 ## DONE
